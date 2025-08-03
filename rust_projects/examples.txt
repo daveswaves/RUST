@@ -1,0 +1,103 @@
+fn main() {
+    let nums = "5 3 9 5 3 1 7 5";
+    
+    let total = nums.matches("5").count();
+    
+    println!("{}", total);
+}
+
+// --------------------
+
+// Rust: Iterators - https://youtu.be/Zcg6wmqdbzc
+
+const LIST: [&str; 3] = ["one", "two", "three"];
+
+fn main() {
+    let mut i = 0;
+    while i < LIST.len() {
+        println!("item: {}", LIST[i]);
+        i += 1;
+    }
+    
+    for item in LIST.iter() {
+        println!("item: {}", item);
+    }
+    
+    let nums = vec![3, 6, 57, 92];
+    
+    let total: u16 = nums.iter().sum(); // 158
+    
+    println!("Numbers total: {}", total);
+}
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    #[test]
+    fn test_assert_iter() {
+        let mut list_iter = LIST.iter();
+    
+        assert_eq!(list_iter.next(), Some(&"one"));
+        assert_eq!(list_iter.next(), Some(&"two"));
+        assert_eq!(list_iter.next(), Some(&"three"));
+        assert_eq!(list_iter.next(), None);
+    }
+    
+    #[test]
+    fn test_assert_iter() {
+        let mut list_iter = LIST.into_iter();
+    
+        assert_eq!(list_iter.next(), Some("one"));
+        assert_eq!(list_iter.next(), Some("two"));
+        assert_eq!(list_iter.next(), Some("three"));
+        assert_eq!(list_iter.next(), None);
+    }
+}
+
+// --------------------
+
+fn main() {
+    let nums = vec![1, 2, 3];
+    
+    let x = nums.iter()
+        .map(|x| x * x);
+    
+    let y: Vec<u32> = x.collect();
+    
+    dbg!(y);
+}
+
+fn main() {
+    let nums = vec![1, 2, 3];
+    
+    let x = nums.iter()
+        .map(|x| x * x)
+        .collect::<Vec<u32>>();
+    
+    dbg!(x); // 1, 4, 9, 16, 25
+}
+
+fn main() {
+    let nums = vec![1, 2, 3, 4, 5];
+    
+    let x = nums.iter()
+        .map(|x| x * x)
+        .filter(|x| *x > 9)
+        .collect::<Vec<u32>>();
+    
+    dbg!(x); // 16, 25
+}
+
+fn main() {
+    let x: Vec<_> = "esrever".chars().rev().collect();
+    let y = "esrever".chars().rev().collect::<Vec<_>>();
+    
+    dbg!(x); // 'r', 'e', 'v', 'e', 'r', 's', 'e'
+    dbg!(y);
+}
+
+fn main() {
+    let x: String = "esrever".chars().rev().collect();
+    println!("{}", &x); // "reverse"
+}

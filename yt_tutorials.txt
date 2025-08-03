@@ -1,0 +1,59 @@
+@TheDevMethod
+
+https://youtu.be/pGh-0cMvH5g Rust: Intro and setting up your first project
+
+https://youtu.be/ub2jqWeez9c Rust: Programming a Guessing Game
+
+https://youtu.be/kjQbdjpTZ-Y Rust: Variables, Data Types, Functions
+
+https://youtu.be/xKoFRhzYwzA Rust: Control Flow
+
+https://youtu.be/DFx1Eo6apkQ Rust: Ownership and Borrowing
+
+https://youtu.be/akj6MIqofkY Rust: Slice Types
+
+https://youtu.be/MDT9vNjtGsY Rust: Structs
+
+https://youtu.be/RHN30fo4B1c Rust: Enums and Option
+
+https://youtu.be/_68HB0j4lmA Rust: Programming a Pitfall Game
+
+https://youtu.be/JIvi-g5K8gk Rust: Managing a Growing Project
+
+https://youtu.be/nOKOFYzvvHo Rust: Vectors
+
+https://youtu.be/zU24IyDlBoE Rust: String
+
+https://youtu.be/80OQHtuNrXI Rust: HashMap
+
+https://youtu.be/y3wUCb-uS3g Rust: Error Handling
+
+https://youtu.be/JLfEiJhpTbE Rust: Generics, Traits, Lifetimes
+
+https://youtu.be/vft2M1aRev4 Rust: Automated Testing
+
+https://youtu.be/IAeCSglFUK0 Rust: Closures
+
+https://youtu.be/Zcg6wmqdbzc Rust: Iterators
+
+https://youtu.be/br6nGvqT48w Rust: Store Data on the Heap with Box
+
+https://youtu.be/UKPpGaqk3ik Rust: Deref Trait
+
+https://youtu.be/LJKpr09k5jE Rust: Drop Trait
+
+https://youtu.be/p2ACHUN6cVs Rust: Reference Counted Smart Pointer
+
+https://youtu.be/9yMRRxR8kIQ Rust: RefCell
+
+https://youtu.be/rzYS7dwGrhA Rust: Weak References
+
+https://youtu.be/BZVuHN4jJw4 Rust: Spawn a Thread
+
+https://youtu.be/wpIiXhQvd-M Rust: Send Data between Threads
+
+https://youtu.be/dGjuAFxvXnU Rust: Shared-State Concurrency
+
+https://youtu.be/QZKWEEO-Uoo Rust: Starting a Workspace
+
+https://youtu.be/srFe8Rdtig0 Rust Project: poll
