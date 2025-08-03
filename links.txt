@@ -1,0 +1,21 @@
+
+🦀 Learn Rust Programming - Complete Course
+https://youtu.be/BpPEoZW5IiY?t=2887
+
+crates.io
+
+🦀 I spent six months rewriting everything in Rust
+https://youtu.be/vL2nB1VwX1M
+
+
+🦀 Advent of Code 2022 (in Rust) 1/25
+https://youtu.be/bkvSRfgDG-E?list=PLWtPciJ1UMuBNTifxm5ADY65SkAdwoQiL
+
+
+🦀 Rust 101 Crash Course: Learn Rust (6 HOURS!) + 19 Practice Exercises | Zero To Mastery 
+https://youtu.be/lzKeecy4OmQ
+
+
+NOTES:
+
+cargo new --lib cal_count

@@ -1,0 +1,10 @@
+[package]
+name = "aoc03_nightly_features"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+
+[lib]
+name = "aoc03_nightly_features"
+path = "src/lib.rs"

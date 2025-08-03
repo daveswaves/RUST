@@ -1,0 +1,53 @@
+{
+	"fn_main": {
+		"scope": "rust",
+		"prefix": "rs002_fn_main",
+		"body": [
+			"fn main() {\n    ${1:// CODE_HERE}\n}",
+		]
+	},
+	
+	"fn_sum": {
+		"scope": "rust",
+		"prefix": "rs_fn_sum",
+		"body": [
+			"/*\nsum_fn(3, 4);\n*/",
+            "fn sum_fn(x: i32, y: i32) -> i32 {\n    x + y\n}\n"
+		],
+		"description": "sum_fn()"
+	},
+
+	"println": {
+		"scope": "rust",
+		"prefix": "rs001_println",
+		"body": [
+			"println!(\"{}\", ${1:var});"
+		],
+		"description": "println()"
+	},
+
+	"fn_user_input": {
+		"scope": "rust",
+		"prefix": "rs_fn_user_input",
+		"body": [
+			"/*\nuse std::io::{self, Write};",
+			"let tmp = user_input(\"${1:Enter Number}: \");\n*/",
+			"fn user_input(prompt: &str)->String {",
+			"    let mut input = String::new();\n",
+			"    print!(\"{}\", prompt);",
+			"    io::stdout().flush().expect(\"Failed to flush stdout\");\n",
+			"    io::stdin()",
+			"        .read_line(&mut input)",
+			"        .expect(\"Failed to read line!\");",
+			"    input\n}",
+		]
+	},
+
+	/* "fn_user_input": {
+		"scope": "rust",
+		"prefix": "fn_user_input",
+		"body": [
+			"",
+		]
+	}, */
+}

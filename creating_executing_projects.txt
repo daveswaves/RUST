@@ -1,0 +1,35 @@
+cd ~/rust_projects/AdventOfCode2022/aoc01_summing_nums
+
+cd ~/rust_projects/AdventOfCode2022/aoc02_rock_pape_scis
+
+cd ~/rust_projects/AdventOfCode2022/aoc03_nightly_features
+https://www.youtube.com/watch?v=yBJJYkC5cdk&list=PLWtPciJ1UMuBNTifxm5ADY65SkAdwoQiL&index=3
+
+cd ~/rust_projects/AdventOfCode2022/aoc04
+https://youtu.be/Xm4jrjohDN8?list=PLWtPciJ1UMuBNTifxm5ADY65SkAdwoQiL
+
+
+cargo run --bin part1
+
+# Run tests:
+cargo test --lib
+
+
+
+
+[[[[[[[[[[[[[[[]]]]]]]]]]]]]]]
+
+Create project: cargo new --lib project_name
+
+
+
+Rust Docs Search:
+https://doc.rust-lang.org/stable/std/index.html?search=contains
+
+https://docs.rs
+
+https://play.rust-lang.org
+
+https://rust-exercises.com/100-exercises
+
+https://rustlings.rust-lang.org

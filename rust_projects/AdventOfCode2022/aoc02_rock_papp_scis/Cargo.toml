@@ -1,0 +1,10 @@
+[package]
+name = "aoc02_rock_papp_scis"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+
+[lib]
+name = "aoc02_rock_papp_scis"
+path = "src/lib.rs"

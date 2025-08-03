@@ -1,0 +1,68 @@
+mkdir -p ~/rustup_install
+cd ~/rustup_install
+
+# Directly download the correct binary for your platform
+curl -LO https://static.rust-lang.org/rustup/dist/x86_64-unknown-linux-gnu/rustup-init
+
+# Make it executable
+chmod +x rustup-init
+
+# Run it
+./rustup-init
+
+- - - - - - - - - -
+
+rustup -V
+rustc -V
+cargo -V
+
+# Create rust project using cargo
+
+cd to where you wish to create project
+
+cargo new project_name
+
+cd into project_name/ and run: cargo build.
+cd target/debug
+Run project: ./project_name
+
+# cargo run is shorthand for the above.
+
+'cargo check' identifies any issues without needing to compile/execute.
+
+
+Rust source files can be automatically formatted via the 'rustfmt' command:
+
+cd src
+rustfmt main.rs
+
+
+
+# # # # # # # # # # # # #
+
+Rust Programming Tutorial (Tech With Tim) 1/9
+https://youtu.be/T_KrYLW4jw8?list=PLzMcBGfZo4-nyLTlSRBvo0zjSnCnqjHYQ
+
+The Rust Programming Language
+https://doc.rust-lang.org/book/title-page.html
+
+Rust by Example
+https://doc.rust-lang.org/stable/rust-by-example/
+
+Rust Documentation
+https://doc.rust-lang.org/stable/
+
+ULTIMATE Rust Lang Tutorial! - Getting Started (Let's Get Rusty) 44 videos
+https://youtu.be/OX9HJsJUDxA?list=PLai5B987bZ9CoVR-QEIN9foz4QCJ0H2Y8
+
+Rust Programming Full Course (BekBrace) 3 hours 5 mins
+https://youtu.be/rQ_J9WH6CGk
+
+
+https://google.github.io/comprehensive-rust
+
+
+https://github.com/search?q=bitcoin+language%3Arust&sort=updated&order=desc&type=repositories&p=3
+https://github.com/bitcoin-dev-project/bitcoiner-intro-to-rust
+
+https://www.lurklurk.org/effective-rust/use-types.html

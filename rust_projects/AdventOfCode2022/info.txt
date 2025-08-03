@@ -1,0 +1,2 @@
+Create project: cargo new --lib aoc01_summing_nums
+Create project: cargo new --lib aoc02_rock_papp_scis

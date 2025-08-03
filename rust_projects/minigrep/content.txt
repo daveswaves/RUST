@@ -1,0 +1,6 @@
+In addition to the Debug trait,
+Rust has provided a number of traits for us to use
+With the derive attribute that can add useful behavior to our custom types.
+Those traits and their behaviors are listed in Appendix C.
+We’ll cover how to implement these traits with custom behavior as well as how to create your own traits in Chapter 10.
+There are also many attributes other than derive; for more information, see the “Attributes” section of the Rust Reference.

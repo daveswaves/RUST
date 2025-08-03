@@ -1,0 +1,2 @@
+Error parsing args: Must supply 2 args ('query' & 'filename').
+Eg. "cargo run search_query content.txt"
