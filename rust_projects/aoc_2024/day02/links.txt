@@ -1,3 +1,0 @@
-https://github.com/hermansildnes/adventOfCode2024/tree/main/solutions/day1
-
-https://github.com/ExileStudios/advent-of-code-2024/blob/main/day1/prompts.txt
