@@ -459,6 +459,15 @@ o
 
 //=================================
 
+fn main() {
+    for number in (1..4).rev() { // or (1..=3)
+        println!("{number}!");
+    }
+    println!("LIFTOFF!!!");
+}
+
+//=================================
+
 
 
 #[allow(dead_code)]
