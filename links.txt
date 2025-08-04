@@ -2,7 +2,6 @@
 🦀 Learn Rust Programming - Complete Course
 https://youtu.be/BpPEoZW5IiY?t=2887
 
-crates.io
 
 🦀 I spent six months rewriting everything in Rust
 https://youtu.be/vL2nB1VwX1M
@@ -16,6 +15,5 @@ https://youtu.be/bkvSRfgDG-E?list=PLWtPciJ1UMuBNTifxm5ADY65SkAdwoQiL
 https://youtu.be/lzKeecy4OmQ
 
 
-NOTES:
-
-cargo new --lib cal_count
+🦀 Rust Programming Full Course (BekBrace) : 3 hours 5 mins
+https://youtu.be/rQ_J9WH6CGk?t=5223

@@ -1,3 +1,10 @@
+
+# The following are the same:
+let s = "initial contents".to_string();
+let s = String::from("initial contents")
+
+//=================================
+
 fn main() {
     let nums = "5 3 9 5 3 1 7 5";
     
@@ -6,7 +13,7 @@ fn main() {
     println!("{}", total);
 }
 
-// --------------------
+//=================================
 
 // Rust: Iterators - https://youtu.be/Zcg6wmqdbzc
 
@@ -55,7 +62,7 @@ mod tests {
     }
 }
 
-// --------------------
+//=================================
 
 fn main() {
     let nums = vec![1, 2, 3];
@@ -101,3 +108,359 @@ fn main() {
     let x: String = "esrever".chars().rev().collect();
     println!("{}", &x); // "reverse"
 }
+
+//=================================
+
+fn main() {
+    let tup: (i8, bool, char) = (1, true, 's');
+    println!("i8:{}, bool:{}, char:{}", tup.0, tup.1, tup.2); // i8:1, bool:true, char:s
+}
+
+//=================================
+
+fn main() {
+    fn print_type_of<T>(_: &T) {
+        use std::any::type_name; // Can also be at top of file.
+        println!("{}", type_name::<T>());
+    }
+    
+    let num_int = 32;
+    print_type_of(&num_int);       // i32
+    
+    let num_float = 32.90;
+    print_type_of(&num_float);     // f64
+    
+    let str_var = "My String!";
+    print_type_of(&str_var);       // &str
+    
+    let character = 'd';           // Note: Double quotes would result in &str
+    print_type_of(&character);     // char
+    
+    let true_or_false = false;
+    print_type_of(&true_or_false); // bool
+    
+    let arr = [1, 2, 3, 4, 5];
+    print_type_of(&arr);           // [i32; 5]
+}
+
+//=================================
+
+fn main() {
+    let mut x = 4;
+    println!("{}", x);
+    x += 2;
+    println!("{}", x);
+    // Rust assigned type as int, so cannot re-assign.
+    x = "Hello"; // expected integer, found `&str`
+}
+
+//=================================
+
+fn main() {
+    let  x = 4;
+    println!("x is: {}", x); // x is: 4
+    
+    {
+        let  x = x - 3;
+        println!("x is: {}", x); // x is: 1
+    }
+    
+    {
+        let  x = 2;
+        println!("x is: {}", x); // x is: 2
+    }
+    
+    let x = x + 1;
+    println!("x is: {}", x); // x is: 5
+}
+
+//=================================
+
+const SECONDS_IN_1HOUR: u16 = 3600;
+
+fn main() {
+    println!("SECONDS_IN_1HOUR constant is: {}", SECONDS_IN_1HOUR);
+}
+
+//=================================
+
+Types:
+u8  : 0..255                  (0     .. 2^8-1)
+i8  : -128..127               (-2^7  .. 2^7-1)
+u16 : 0..65535                (0     .. 2^16-1)
+i16 : -32768..32767           (-2^15 .. 2^15-1)
+u32 : 0..4294967295           (0     .. 2^32-1)
+i32 : -2147483648..2147483647 (-2^31 .. 2^31-1)
+u64 : 0..18446744073709551615 (etc.)
+i64 : -9223372036854775808..9223372036854775807
+
+//=================================
+
+# Getting user input:
+# ###################
+
+fn main() {
+    use std::io;
+    let mut input = String::new();
+    io::stdin().read_line(&mut input).expect("Failed to read line!");
+    println!("You entered: {}", input);
+}
+
+fn main() {
+    use std::io::{self, Write};
+    let mut input = String::new();
+    
+    print!("Enter: ");
+    io::stdout().flush().expect("Failed to flush stdout");
+    
+    io::stdin()
+        .read_line(&mut input)
+        .expect("Failed to read line!");
+    
+    println!("You entered: {}", input);
+}
+
+//=================================
+
+fn main() {
+    let min_i32 = i32::MIN;
+    let max_i32 = i32::MAX;
+    let max_u64 = u64::MAX;
+    let max_u128 = u128::MAX;
+    
+    println!("MIN i32: {}", min_i32);   // MIN i32: -2147483648
+    println!("MAX i32: {}", max_i32);   // MAX i32: 2147483647
+    println!("MAX u64: {}", max_u64);   // MAX u64: 18446744073709551615
+    println!("MAX u128: {}", max_u128); // MAX u128: 340282366920938463463374607431768211455
+}
+
+//=================================
+
+fn main() {
+    let a = 255_u8;
+    let b = 1u8;
+    let c = 120_000 as u32;
+    
+    // let ans = x + y; // 255 max, so fails - remember ans is also u8
+    
+    // Type cast : works without () but less clear
+    let ans = (a as u32) + (b as u32) + c;
+    
+    println!("{} + {} + {} = {}", a, b, c, ans); // 255 + 1 + 120000 = 120256
+}
+
+//=================================
+
+fn main() {
+    let x: u8 = 255;
+    let y: u8 = 10;
+    
+    let ans = x / y;
+    println!("{} / {} = {}", x, y, ans); // 255 / 10 = 25
+    
+    let x: f32 = 255.0;
+    let y: f32 = 10.0;
+    
+    let ans = x / y;
+    println!("{} / {} = {}", x, y, ans); // 255 / 10 = 25.5
+}
+
+//=================================
+
+use std::io::{self, Write};
+
+fn main() {
+    input_with_prompt();
+}
+
+fn input_with_prompt() {
+    let mut input1 = String::new();
+    let mut input2 = String::new();
+    
+    print!("Enter 1st number: ");
+    io::stdout().flush().expect("Failed to flush stdout");
+    
+    io::stdin()
+        .read_line(&mut input1)
+        .expect("Failed to read line!");
+    
+    let num1: i64 = input1.trim().parse().unwrap();
+    
+    print!("Enter 2nd number: ");
+    io::stdout().flush().expect("Failed to flush stdout");
+    
+    io::stdin()
+        .read_line(&mut input2)
+        .expect("Failed to read line!");
+    
+    let num2: i64 = input2.trim().parse().unwrap();
+    
+    let ans = num1 + num2;
+    
+    println!("Sum of 2 numbers ({} + {}): {}", num1, num2, ans);
+}
+
+# OUTPUT:
+Enter 1st number: 45
+Enter 2nd number: 32
+Sum of 2 numbers (45 + 32): 77
+
+//=================================
+
+fn main() {
+    let mut account = BankAccount{
+        owner: "Alice".to_string(),
+        balance: 150.95
+    };
+    // Immutable borrow to check the balance
+    account.check_balance();
+
+    // mutable borrow to withdraw money
+    account.withdraw(49.95);
+
+    // Recheck balance
+    account.check_balance();
+}
+
+struct BankAccount {
+    owner: String,
+    balance: f64
+}
+
+impl BankAccount {
+    fn withdraw(&mut self, amount: f64) {
+        println!("Withdrawing £{:.2} from account owned by {}", amount, self.owner);
+        self.balance -= amount;
+    }
+
+    fn check_balance(&self) {
+        println!("Account owned by {} has a balance of £{:.2}", self.owner, self.balance);
+    }
+}
+
+//=================================
+
+fn main() {
+    assert!(true && false == false);
+    println!("Success: (true && false == false)");
+
+    assert!(true || false == true);
+    println!("Success: (true || false == true)");
+
+    assert!(!true == false);
+    println!("Success: (!true == false)");
+
+    println!("0011 AND 0101 == {:04b} // Only 1 if both bits are 1", 0b0011 as u32 & 0b0101);        // 0001
+    println!("0011 OR 0101 == {:04b} // 1 as long as one bit is 1", 0b0011 as u32 | 0b0101);         // 0111
+    println!("0011 XOR 0101 == {:04b} // Only 1 if both bits are opposite", 0b0011 as u32 ^ 0b0101); // 0110
+    println!("1 << 5 is {:04b} ({})", 1u32 << 5, 1u32 << 5); // 1 << 5 is 100000 (32)
+    println!("0x80 >> 2 is 0x{:x}", 0x80u32 >> 2); // 0x80 >> 2 is 0x20
+}
+
+//=================================
+
+fn main() {
+    assert!(1u32 + 2 == 3);
+    println!("Success: (1u32 + 2 == 3)");
+    
+    assert!(1i32 - 2 == -1);
+    println!("Success: (1i32 - 2 == -1)");
+    
+    assert!(1i8 - 2 == -1);
+    println!("Success: (1i8 - 2 == -1)");
+    
+    assert!(3 * 50 == 150);
+    println!("Success: (3 * 50 == 150)");
+    
+    assert!(9.6f32 / 3.2f32 == 3.0); // Type f64 results in (9.6 / 3.2 == 2.9999999999999996)
+    println!("Success: (9.6f32 / 3.2f32 == 3.0)");
+    
+    assert!(24 % 5 == 4);
+    println!("Success: (24 % 5 == 4)");
+}
+
+//=================================
+
+fn main() {
+    for c in 'a'..='z' {
+        print!("{} ", c);
+    }
+    println!("");
+    for c in 'a'..='z' { // a b c ...
+        print!("{} ", c as u8); // covert letters to ASCII numbers: 97 98 99 ...
+    }
+}
+
+//=================================
+
+fn main() {
+    // Floats default to f64, which results in error
+    println!("0.1 + 0.2 = {}", 0.1 + 0.2);      // 0.1 + 0.2 = 0.30000000000000004
+    println!("0.1 + 0.2 = {}", 0.1_f32 + 0.2_f32); // 0.1 + 0.2 = 0.3
+    println!("0.1 + 0.2 = {}", 0.1 as f32 + 0.2 as f32); // 0.1 + 0.2 = 0.3
+    println!("0.1 + 0.2 = {}", (0.1 as f32) +( 0.2 as f32)); // 0.1 + 0.2 = 0.3
+}
+
+//=================================
+
+fn main() {
+    let mut v = vec!["one", "two", "three", "four", "five"];
+    v.push("six");
+    v.extend(["seven", "eight", "nine", "ten"]);
+    
+    println!("{:?}", v); // ["one", "two", "three", "four", "five", "six", "seven", "eight", "nine", "ten"]
+
+    let indx = 9;
+    let indx_plus1 = indx + 1;
+    let item = v.get(indx);
+    match item {
+        Some(item) => println!("Element {indx_plus1} (index {indx}): {item}"), // Element 10 (index 9): ten
+        None => println!("Element {indx_plus1} (index {indx}) does not exist."),
+    }
+}
+
+//=================================
+
+use std::collections::HashMap;
+
+fn main() {
+    // Count word occurrences in text.
+    let text = "hello world wonderful world";
+    let mut map = HashMap::new();
+
+    for word in text.split_whitespace() {
+        let count = map.entry(word).or_insert(0);
+        *count += 1;
+    }
+
+    println!("{map:?}"); // {"wonderful": 1, "world": 2, "hello": 1}
+    println!("# world: {:?}", map["world"]); // # world: 2
+}
+
+//=================================
+
+fn main() {
+    for chr in "Hello".chars() {
+        println!("{chr}");
+    }
+    for byt in "Hello".bytes() {
+        println!("{byt}");
+    }
+}
+/*
+H
+e
+l
+l
+o
+72
+101
+*/
+
+//=================================
+
+
+
+#[allow(dead_code)]
+
+crates.io
