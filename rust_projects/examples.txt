@@ -112,6 +112,13 @@ fn main() {
 //=================================
 
 fn main() {
+    let str2num: u32 = "42".parse().expect("Not a number!");
+    println!("{}", str2num); // 42
+}
+
+//=================================
+
+fn main() {
     let tup: (i8, bool, char) = (1, true, 's');
     println!("i8:{}, bool:{}, char:{}", tup.0, tup.1, tup.2); // i8:1, bool:true, char:s
 }
