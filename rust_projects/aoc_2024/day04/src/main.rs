@@ -15,13 +15,10 @@ SAXAMASAAA
 MAMMMXMMMM
 MXMXAXMASX";
 
-    let _input = "0123456789
-abcdefghij
-klmnopqrst
-uvwxyz0123
-ABCDEFGHIJ
-KLMNOPQRST
-UVWXYZ9876";
+    let _input = "..X.
+...M
+...A
+...X";
 
     day4_part1(&input);
     // println!("Total (part 1): {}", day3_part1(&input)); // result: 
