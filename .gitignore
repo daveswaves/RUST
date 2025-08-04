@@ -1,3 +1,4 @@
 rustup-init
 target/
 Cargo.lock
+rust_projects/extract_select_skus_to_tsv/files/
