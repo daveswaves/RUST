@@ -1,3 +1,6 @@
+// cd ~/RUST/rust_projects/aoc_2024/day04
+// cargo run
+
 use day04::*;
 // use std::fs::read_to_string;
 

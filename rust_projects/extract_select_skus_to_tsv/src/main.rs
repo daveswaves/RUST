@@ -92,8 +92,8 @@ fn file_to_hashmap(filename: &str) -> Result<HashMap<String, i32>> {
 #[allow(dead_code)]
 fn read_lines(filename: &str) -> Vec<String> {
     read_to_string(filename) 
-        .unwrap()  // panic on possible file-reading errors
-        .lines()  // split the string into an iterator of string slices
+        .unwrap()
+        .lines()
         .map(String::from)  // make each slice into a string
-        .collect()  // gather them together into a vector
+        .collect()
 }

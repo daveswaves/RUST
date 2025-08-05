@@ -8,12 +8,32 @@ pub fn day4_part1(input: &str) -> u32 {
         .map(|line| line.chars().collect())
         .collect();
 
-    let xmas_total = search_xmas(grid);
-    println!("{}", xmas_total);
+    // let xmas_total = search_xmas(grid);
+    // println!("{}", xmas_total);
+
+    let (count, matches) = search_xmas(grid);
+    
+    println!("Found {} occurrences of 'XMAS'", count);
+    for (row, col, dr, dc) in matches {
+        println!("Match at ({}, {}) going direction ({}, {})", row, col, dr, dc);
+    }
     10
 }
 
-fn search_xmas(grid: Vec<Vec<char>>) -> u32 {
+/*
+MMMSXXMASM
+MSAMXMSMSA
+AMXSXMAAMM
+MSAMASMSMX
+XMASAMXAMM
+XXAMMXXAMA
+SMSMSASXSS
+SAXAMASAAA
+MAMMMXMMMM
+MXMXAXMASX
+*/
+
+fn search_xmas(grid: Vec<Vec<char>>) -> (u32, Vec<(usize, usize, isize, isize)>) {
     let rows = grid.len();
     let cols = grid[0].len();
     let target = ['X', 'M', 'A', 'S'];
@@ -29,6 +49,7 @@ fn search_xmas(grid: Vec<Vec<char>>) -> u32 {
     ];
 
     let mut count = 0;
+    let mut matches = Vec::new(); // For highlighing
 
     for row in 0..rows {
         for col in 0..cols {
@@ -52,9 +73,10 @@ fn search_xmas(grid: Vec<Vec<char>>) -> u32 {
 
                 if found {
                     count += 1;
+                    matches.push((row, col, dr, dc));
                 }
             }
         }
     }
-    count
+    (count, matches)
 }
