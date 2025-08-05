@@ -2,21 +2,21 @@
 // cargo run
 
 use day04::*;
-// use std::fs::read_to_string;
+use std::fs::read_to_string;
 
 fn main() {
-    // let input = read_to_string("./day4.txt").unwrap();
+    let input = read_to_string("./day4.txt").unwrap();
     
-    let input = "MMMSXXMASM
-MSAMXMSMSA
-AMXSXMAAMM
-MSAMASMSMX
-XMASAMXAMM
-XXAMMXXAMA
-SMSMSASXSS
-SAXAMASAAA
-MAMMMXMMMM
-MXMXAXMASX";
+//     let input = "MMMSXXMASM
+// MSAMXMSMSA
+// AMXSXMAAMM
+// MSAMASMSMX
+// XMASAMXAMM
+// XXAMMXXAMA
+// SMSMSASXSS
+// SAXAMASAAA
+// MAMMMXMMMM
+// MXMXAXMASX";
 
     day4_part1(&input);
     // println!("Total (part 1): {}", day3_part1(&input)); // result: 

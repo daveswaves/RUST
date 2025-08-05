@@ -14,12 +14,12 @@ pub fn day4_part1(input: &str) {
     let (count, matches) = search_xmas(grid);
     
     println!("Found {} occurrences of 'XMAS'", count);
-    for (row, col, dr, dc) in matches {
-        let grid_str = highlight((row, col, dr, dc));
+    for (row, col, _dr, _dc) in matches {
+        // let grid_str = highlight((row, col, dr, dc));
         
         println!("Match at ({}, {}):", row, col);
         // println!("Match at ({}, {}) going direction ({}, {})", row, col, dr, dc);
-        println!("{}", grid_str);
+        // println!("{}", grid_str);
     }
 }
 
@@ -71,7 +71,7 @@ fn search_xmas(grid: Vec<Vec<char>>) -> (u32, Vec<(usize, usize, isize, isize)>)
     (count, matches)
 }
 
-fn highlight((x, y, dx, dy): (usize, usize, isize, isize)) -> String {
+pub fn highlight((x, y, dx, dy): (usize, usize, isize, isize)) -> String {
     let input = vec!["*".repeat(10); 10].join("\n");
 
     let mut grid: Vec<Vec<char>> = input
@@ -86,7 +86,13 @@ fn highlight((x, y, dx, dy): (usize, usize, isize, isize)) -> String {
         let xi = x as isize + dx * i as isize;
         let yi = y as isize + dy * i as isize;
 
-        grid[xi as usize][yi as usize] = *ch;
+        // grid[xi as usize][yi as usize] = *ch;
+        // Bounds check to avoid panic on negative or overflow
+        if xi >= 0 && yi >= 0 &&
+           (xi as usize) < grid.len() &&
+           (yi as usize) < grid[0].len() {
+            grid[xi as usize][yi as usize] = *ch;
+        }
     }
 
     let grid_str = grid
