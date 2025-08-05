@@ -1,13 +1,8 @@
-/* use std::fs::read_to_string;
+// https://doc.rust-lang.org/stable/rust-by-example/std_misc/file/read_lines.html
 
-fn main() {
-    // println!("Hello, world!");
-} */
-
-
-use std::fs::read_to_string;
+use std::fs::{File, read_to_string};
 use std::collections::HashMap;
-use std::fs::File;
+// use std::fs::File;
 use std::io::{BufWriter, Write, BufRead, BufReader, Result};
 
 /* use std::fs::File;

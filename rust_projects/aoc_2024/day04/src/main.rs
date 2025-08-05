@@ -18,11 +18,6 @@ SAXAMASAAA
 MAMMMXMMMM
 MXMXAXMASX";
 
-    let _input = "..X.
-...M
-...A
-...X";
-
     day4_part1(&input);
     // println!("Total (part 1): {}", day3_part1(&input)); // result: 
 }

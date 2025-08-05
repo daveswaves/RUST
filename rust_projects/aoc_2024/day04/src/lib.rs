@@ -2,7 +2,7 @@
 // #[allow(unused_mut)]
 // #[allow(dead_code)]
 // println!("{:#?}", var);
-pub fn day4_part1(input: &str) -> u32 {
+pub fn day4_part1(input: &str) {
     let grid: Vec<Vec<char>> = input
         .lines()
         .map(|line| line.chars().collect())
@@ -15,23 +15,13 @@ pub fn day4_part1(input: &str) -> u32 {
     
     println!("Found {} occurrences of 'XMAS'", count);
     for (row, col, dr, dc) in matches {
-        println!("Match at ({}, {}) going direction ({}, {})", row, col, dr, dc);
+        let grid_str = highlight((row, col, dr, dc));
+        
+        println!("Match at ({}, {}):", row, col);
+        // println!("Match at ({}, {}) going direction ({}, {})", row, col, dr, dc);
+        println!("{}", grid_str);
     }
-    10
 }
-
-/*
-MMMSXXMASM
-MSAMXMSMSA
-AMXSXMAAMM
-MSAMASMSMX
-XMASAMXAMM
-XXAMMXXAMA
-SMSMSASXSS
-SAXAMASAAA
-MAMMMXMMMM
-MXMXAXMASX
-*/
 
 fn search_xmas(grid: Vec<Vec<char>>) -> (u32, Vec<(usize, usize, isize, isize)>) {
     let rows = grid.len();
@@ -79,4 +69,31 @@ fn search_xmas(grid: Vec<Vec<char>>) -> (u32, Vec<(usize, usize, isize, isize)>)
         }
     }
     (count, matches)
+}
+
+fn highlight((x, y, dx, dy): (usize, usize, isize, isize)) -> String {
+    let input = vec!["*".repeat(10); 10].join("\n");
+
+    let mut grid: Vec<Vec<char>> = input
+        .lines()
+        .map(|line| line.chars().collect())
+        .collect();
+
+    let letters = ['X', 'M', 'A', 'S'];
+    // let letters = ['1', '2', '3', '4'];
+
+    for (i, ch) in letters.iter().enumerate() {
+        let xi = x as isize + dx * i as isize;
+        let yi = y as isize + dy * i as isize;
+
+        grid[xi as usize][yi as usize] = *ch;
+    }
+
+    let grid_str = grid
+        .iter()
+        .map(|row| row.iter().collect::<String>())
+        .collect::<Vec<String>>()
+        .join("\n");
+
+    grid_str
 }
